@@ -1,29 +1,39 @@
 eq = input().strip()
 
-a = eq[0]
-op = eq[1]
-b = eq[2]
-c = eq[4]
+if '+' in eq:
+    parts = eq.split('+')
+    a = parts[0]
+    b_c = parts[1].split('=')
+    b = b_c[0]
+    c = b_c[1]
+    op = '+'
+else:
+    parts = eq.split('-')
+    a = parts[0]
+    b_c = parts[1].split('=')
+    b = b_c[0]
+    c = b_c[1]
+    op = '-'
+
+
+if a != 'x':
+    a = int(a)
+if b != 'x':
+    b = int(b)
+if c != 'x':
+    c = int(c)
 
 if a == 'x':
-    b = int(b)
-    c = int(c)
     if op == '+':
         x = c - b
     else:
         x = c + b
-
 elif b == 'x':
-    a = int(a)
-    c = int(c)
     if op == '+':
         x = c - a
     else:
         x = a - c
-
-else:
-    a = int(a)
-    b = int(b)
+else:  # x == c
     if op == '+':
         x = a + b
     else:

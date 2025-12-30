@@ -5,8 +5,8 @@ n = int(input())
 for _ in range(n):
     plate = input().strip()
 
-    if len(plate) != 6:
-        print("No")
+    i
+        pf len(plate) != 6:rint("No")
         continue
 
     ok = True

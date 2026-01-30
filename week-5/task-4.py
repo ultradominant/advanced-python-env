@@ -14,9 +14,6 @@ class Manager(Employee):
         super().__init__(salary)
         self.bonus = bonus
 
-    def get_role(self):
-        return "Manager"
-
     def get_bonus(self):
         return self.bonus
 

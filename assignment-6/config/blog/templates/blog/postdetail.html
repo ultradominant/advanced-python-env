@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<div class="page">
+    <div class="post-card">
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.content }}</p>
+        <span class="date">{{ post.created_at }}</span>
+    </div>
+
+    <a class="btn back" href="{% url 'home' %}">Back</a>
+</div>
+{% endblock %}

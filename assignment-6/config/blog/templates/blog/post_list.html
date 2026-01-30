@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Blog | Home{% endblock %}
+
+{% block content %}
+<div class="page">
+    <div class="header">
+        <h1>Blog</h1>
+        <p>Simple blog made with Django</p>
+        <a class="btn" href="{% url 'post_list' %}">All Posts</a>
+    </div>
+
+    <div class="posts">
+        {% for post in posts %}
+        <div class="post-card">
+            <h2><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h2>
+            <p>{{ post.content|slice:":120" }}...</p>
+            <span class="date">{{ post.created_at }}</span>
+        </div>
+        {% empty %}
+        <div class="post-card">
+            <h2>No posts yet</h2>
+            <p>Create one in admin panel</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
